@@ -1,0 +1,23 @@
+#define ldr A0
+#define led 4
+
+int ldrValor = 0;
+
+void setup(){
+  pinMode(ldr,INPUT);
+  pinMode(led,OUTPUT);
+  Serial.begin(9600);
+
+}
+void loop(){
+  ldrValor = analogRead(ldr);
+  
+  if(ldrValor >= 200){
+    digitalWrite(led, HIGH);
+  }else{ 
+    digitalWrite(led, LOW);
+    }
+
+  Serial.println(ldrValor);
+  delay(500);
+}
