@@ -44,6 +44,7 @@ void loop() {
         Serial.println(idadeInfo);
      }
 
+
       //INCLUSÃO DE DIAS
 
      //Dia e Hora 
