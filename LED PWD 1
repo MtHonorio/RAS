@@ -1,0 +1,19 @@
+
+#define LED 10
+
+
+int contador = 0;
+void setup() {
+  Serial.begin(9600); //Iniciar comunicação serial, visualizar os dados.  Os valores aumentam as taxas de transferência de bits.
+  
+  pinMode(LED, OUTPUT);
+}
+
+void loop() {
+  //entra valores entre 0-255
+  Serial.print("Valor da contagem: ");    //Print na tela s/ quebra de linha.
+  Serial.println(contador);               //Print do valor da variável c/ quebra de linha.
+  contador++;
+  delay(1000);
+  
+}
