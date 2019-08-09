@@ -1,0 +1,30 @@
+#include <Servo.h>
+
+#define LED 9
+#define SERVO 10 //Pino do Servo
+
+Servo ServMotor;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  ServMotor.attach(SERVO); //chamando o define do pinMode.
+  ServMotor.write(0); //Valor em graus do code.
+}
+
+void loop() {
+  //Vai de 0° a 180° graus
+  for (int i=0; i <=180; i++){  
+    ServMotor.write(i); 
+    delay(25);
+  }
+
+  //Volta de 180° a 0° graus
+  for (int i=180; i >=0; i--){
+    ServMotor.write(i);
+    delay(25);
+  }
+
+
+  
+}
