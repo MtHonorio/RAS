@@ -1,0 +1,48 @@
+#define EN 7
+#define EP 6
+#define DN 5
+#define DP 4
+
+void setup() {
+ pinMode(EN,OUTPUT);
+ pinMode(DN,OUTPUT);
+ pinMode(EP,OUTPUT);
+ pinMode(DP,OUTPUT);
+ 
+ 
+Serial.begin(9600);
+}
+
+void loop() {
+  if (Serial.available()){
+    char temp = Serial.read();
+    Serial.println(temp);
+  
+  if(temp == 'F'){                 
+    digitalWrite(EP, HIGH);
+    digitalWrite(DP, HIGH);
+    digitalWrite(EN, LOW);
+    digitalWrite(DN, LOW);}
+
+   if(temp == 'L'){
+    digitalWrite(EP, LOW);
+    digitalWrite(DP, HIGH);
+    digitalWrite(EN, LOW);
+    digitalWrite(DN, LOW);}
+
+   if(temp == 'R'){
+    digitalWrite(EP, LOW);
+    digitalWrite(DP, HIGH);
+    digitalWrite(EN, LOW);
+    digitalWrite(DN, LOW);}
+
+   if(temp == 'B'){
+    digitalWrite(EP, LOW);
+    digitalWrite(DP, LOW);
+    digitalWrite(EN, HIGH);
+    digitalWrite(DN, HIGH);
+    }
+
+
+   }
+  }
