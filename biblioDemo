@@ -1,0 +1,35 @@
+void deletar()
+{
+    atual.select = 1;
+    limparTela;
+    
+    while (1)
+    {
+        puts("");
+        printf(" %s Deletar Casa\n", (atual.select == 1) ? "=>" : "  ");
+        printf(" %s Deletar Apartamento\n", (atual.select == 2) ? "=>" : "  ");
+        printf(" %s Deletar Terreno\n", (atual.select == 3) ? "=>" : "  ");
+        printf(" %s Voltar\n", (atual.select == 4) ? "=>" : "  ");
+
+        Opcoes(4);
+        if(atual.key == ENTER)
+            break;
+    }
+
+    switch(atual.select)
+    {
+    case 1:
+        deletar_casa();
+        break;
+    case 2:
+        deletar_apartamento();
+        break;
+    case 3:
+        deletar_terreno();
+        break;
+    case 4:
+        menuPrincipal();
+        break;
+    }
+    
+}
